@@ -3,7 +3,6 @@ package com.itixti.spring_with_mongodb.service;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
-import com.itixti.spring_with_mongodb.model.Empresa;
 import com.itixti.spring_with_mongodb.repository.EmpresaRepository;
 import com.itixti.spring_with_mongodb.repository.FuncionarioRepository;
 import com.itixti.spring_with_mongodb.utils.Mapper;
