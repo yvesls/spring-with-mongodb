@@ -8,13 +8,10 @@ import org.springframework.stereotype.Service;
 import com.itixti.spring_with_mongodb.repository.EmpresaRepository;
 import com.itixti.spring_with_mongodb.repository.FuncionarioRepository;
 import com.itixti.spring_with_mongodb.utils.Mapper;
-import com.mongodb.DuplicateKeyException;
-import com.itixti.spring_with_mongodb.model.Empresa;
 import com.itixti.spring_with_mongodb.model.Funcionario;
 import com.itixti.spring_with_mongodb.model.dto.EmpresaDTO;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -59,6 +56,16 @@ public class EmpresaService {
 
     public List<Funcionario> buscarFuncionariosPorEmpresa(ObjectId empresaId) {
         return funcionarioRepository.findByEmpresaId(empresaId);
+    }
+
+    public void salvarEmpresas(List<EmpresaDTO> empresas) {
+        empresaRepository
+                .saveAll(empresas.stream().map(empresa -> mapper.toEntity(empresa)).collect(Collectors.toList()));
+    }
+
+    public List<EmpresaDTO> findByNome(String nome) {
+        var empresas = empresaRepository.findByNome(nome);
+        return empresas.stream().map(empresa -> mapper.toDTO(empresa)).collect(Collectors.toList());
     }
 
 }

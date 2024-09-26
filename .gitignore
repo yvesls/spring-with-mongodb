@@ -1,0 +1,58 @@
+# Python
+py-base-dados/__pycache__/
+py-base-dados/*.py[cod]
+py-base-dados/*.pyo
+py-base-dados/*.pyd
+py-base-dados/*.db
+py-base-dados/*.sqlite3
+py-base-dados/*.egg-info/
+py-base-dados/dist/
+py-base-dados/build/
+py-base-dados/*.egg
+py-base-dados/*.whl
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Java Spring
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Dependency directories
+target/
+build/
+*.jar
+*.war
+*.ear
+
+# Miscellaneous
+*.iml
+*.hprof
+
+# Spring Boot specific
+spring-boot-*.jar
+spring-boot-*.war
+
+# Other
+.DS_Store
+Thumbs.db
+*.orig
+*.tmp
+*.bak
+
+# Other configuration files
+*.local
+*.properties
+*.xml
